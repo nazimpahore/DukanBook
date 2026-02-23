@@ -49,12 +49,17 @@ app.get('*', (req, res) => {
 // ─── Error Handling Middleware (must be last) ─────────────────────────────────
 app.use(errorHandler);
 
-// ─── Start Server ─────────────────────────────────────────────────────────────
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
-  console.log(`📁 Environment: ${process.env.NODE_ENV || 'development'}`);
+// ─── Start Server (only in non-serverless environments) ───────────────────────
+if (process.env.VERCEL !== '1') {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running on http://localhost:${PORT}`);
+    console.log(`📁 Environment: ${process.env.NODE_ENV || 'development'}`);
 
-  // Start daily cron job for payment reminders
-  startReminderJob();
-});
+    // Start daily cron job for payment reminders (not supported on Vercel)
+    startReminderJob();
+  });
+}
+
+// ─── Export for Vercel Serverless ─────────────────────────────────────────────
+module.exports = app;
