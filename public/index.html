@@ -30,14 +30,14 @@
       </div>
 
       <!-- Login Form -->
-      <form id="loginForm" class="auth-form" onsubmit="handleLogin(event)">
+      <form id="loginForm" class="auth-form" onsubmit="handleLogin(event)" autocomplete="off">
         <div class="form-group">
           <label>Email Address</label>
-          <input type="email" id="loginEmail" placeholder="you@example.com" required autocomplete="email" />
+          <input type="email" id="loginEmail" placeholder="you@example.com" required autocomplete="off" />
         </div>
         <div class="form-group">
           <label>Password</label>
-          <input type="password" id="loginPassword" placeholder="Enter password" required autocomplete="current-password" />
+          <input type="password" id="loginPassword" placeholder="Enter password" required autocomplete="off" />
         </div>
         <button type="submit" class="btn btn-primary btn-full" id="loginBtn" style="margin-top:8px;">
           Login to Dashboard →
@@ -45,28 +45,28 @@
       </form>
 
       <!-- Register Form -->
-      <form id="registerForm" class="auth-form hidden" onsubmit="handleRegister(event)">
+      <form id="registerForm" class="auth-form hidden" onsubmit="handleRegister(event)" autocomplete="off">
         <div class="form-row">
           <div class="form-group">
             <label>Your Name</label>
-            <input type="text" id="regName" placeholder="Muhammad Ali" required autocomplete="name" />
+            <input type="text" id="regName" placeholder="Muhammad Ali" required autocomplete="off" />
           </div>
           <div class="form-group">
             <label>Shop Name</label>
-            <input type="text" id="regShopName" placeholder="Ali General Store" required />
+            <input type="text" id="regShopName" placeholder="Ali General Store" required autocomplete="off" />
           </div>
         </div>
         <div class="form-group">
           <label>Email</label>
-          <input type="email" id="regEmail" placeholder="ali@shop.com" required autocomplete="email" />
+          <input type="email" id="regEmail" placeholder="ali@shop.com" required autocomplete="off" />
         </div>
         <div class="form-group">
           <label>Phone</label>
-          <input type="tel" id="regPhone" placeholder="03001234567" autocomplete="tel" />
+          <input type="tel" id="regPhone" placeholder="03001234567" autocomplete="off" />
         </div>
         <div class="form-group">
           <label>Password</label>
-          <input type="password" id="regPassword" placeholder="Min 6 characters" required minlength="6" autocomplete="new-password" />
+          <input type="password" id="regPassword" placeholder="Min 6 characters" required minlength="6" autocomplete="off" />
         </div>
         <button type="submit" class="btn btn-primary btn-full" id="registerBtn" style="margin-top:8px;">
           Create Account →
